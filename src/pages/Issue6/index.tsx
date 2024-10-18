@@ -4,45 +4,47 @@ import { title, subtitle } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
 
 export default function Issue6() {
+let base = "/our-city";
+
   const images = [
     {
-      src: "/public/issue6/1.JPG",
+      src: `${base}/issue6/1.JPG`,
       alt: "OUR CITY",
     },
     {
-      src: "/public/issue6/2.JPG",
+      src: `${base}/public/issue6/2.JPG`,
       alt: "OUR CITY",
     },
     {
-      src: "/public/issue6/3.JPG",
+      src: `${base}/public/issue6/3.JPG`,
       alt: "OUR CITY",
     },
     {
-      src: "/public/issue6/4.JPG",
+      src: `${base}/public/issue6/4.JPG`,
       alt: "OUR CITY",
     },
     {
-      src: "/public/issue6/5.JPG",
+      src: `${base}/public/issue6/5.JPG`,
       alt: "OUR CITY",
     },
     {
-      src: "/public/issue6/6.JPG",
+      src: `${base}/public/issue6/6.JPG`,
       alt: "OUR CITY",
     },
     {
-      src: "/public/issue6/7.JPG",
+      src: `${base}/public/issue6/7.JPG`,
       alt: "OUR CITY",
     },
     {
-      src: "/public/issue6/8.JPG",
+      src: `${base}/public/issue6/8.JPG`,
       alt: "OUR CITY",
     },
     {
-      src: "/public/issue6/9.JPG",
+      src: `${base}/public/issue6/9.JPG`,
       alt: "OUR CITY",
     },
     {
-      src: "/public/issue6/10.JPG",
+      src: `${base}/public/issue6/10.JPG`,
       alt: "OUR CITY",
     },
   ];

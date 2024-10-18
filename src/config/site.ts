@@ -1,4 +1,5 @@
 export type SiteConfig = typeof siteConfig;
+let base = "/our-city";
 
 export const siteConfig = {
   name: "Vite + NextUI",
@@ -9,30 +10,31 @@ export const siteConfig = {
       href: "/",
     },
   ],
+
   navMenuItems: [
     {
       label: "第一期",
-      href: "/issue1",
+      href: `${base}/issue6`,
     },
     {
       label: "第二期",
-      href: "/issue2",
+      href: `${base}/issue6`,
     },
     {
       label: "第三期",
-      href: "/issue3",
+      href: `${base}/issue6`,
     },
     {
       label: "第四期",
-      href: "/issue4",
+      href: `${base}/issue6`,
     },
     {
       label: "第五期",
-      href: "/issue5",
+      href: `${base}/issue6`,
     },
     {
       label: "第六期",
-      href: "/issue6",
+      href: `${base}/issue6`,
     },
   ],
 };

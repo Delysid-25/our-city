@@ -13,6 +13,7 @@ function App() {
     <Routes>
       <Route element={<Issue6 />} path={base}/>
       <Route element={<Issue6 />} path={`${base}/issue6`} />
+      {/* <Route element={<Issue6 />} path={`/issue6`} /> */}
       <Route element={<Issue5 />} path={`${base}/issue5`} />
       <Route element={<Issue4 />} path={`${base}/issue4`} />
       <Route element={<Issue3 />} path={`${base}/issue3`} />

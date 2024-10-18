@@ -4,51 +4,49 @@ import { title, subtitle } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
 
 export default function Issue6() {
-let base = "/our-city";
 
-  const images = [
-    {
-      src: `${base}/issue6/1.JPG`,
-      alt: "OUR CITY",
-    },
-    {
-      src: `${base}/public/issue6/2.JPG`,
-      alt: "OUR CITY",
-    },
-    {
-      src: `${base}/public/issue6/3.JPG`,
-      alt: "OUR CITY",
-    },
-    {
-      src: `${base}/public/issue6/4.JPG`,
-      alt: "OUR CITY",
-    },
-    {
-      src: `${base}/public/issue6/5.JPG`,
-      alt: "OUR CITY",
-    },
-    {
-      src: `${base}/public/issue6/6.JPG`,
-      alt: "OUR CITY",
-    },
-    {
-      src: `${base}/public/issue6/7.JPG`,
-      alt: "OUR CITY",
-    },
-    {
-      src: `${base}/public/issue6/8.JPG`,
-      alt: "OUR CITY",
-    },
-    {
-      src: `${base}/public/issue6/9.JPG`,
-      alt: "OUR CITY",
-    },
-    {
-      src: `${base}/public/issue6/10.JPG`,
-      alt: "OUR CITY",
-    },
-  ];
-
+const images = [
+  {
+    src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/1.JPG",
+    alt: "OUR CITY",
+  },
+  {
+    src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/2.JPG",
+    alt: "OUR CITY",
+  },
+  {
+    src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/3.JPG",
+    alt: "OUR CITY",
+  },
+  {
+    src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/4.JPG",
+    alt: "OUR CITY",
+  },
+  {
+    src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/5.JPG",
+    alt: "OUR CITY",
+  },
+  {
+    src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/6.JPG",
+    alt: "OUR CITY",
+  },
+  {
+    src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/7.JPG",
+    alt: "OUR CITY",
+  },
+  {
+    src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/8.JPG",
+    alt: "OUR CITY",
+  },
+  {
+    src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/9.JPG",
+    alt: "OUR CITY",
+  },
+  {
+    src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/10.JPG",
+    alt: "OUR CITY",
+  },
+];
   return (
     <DefaultLayout>
       <span className={title()}>在燕郊&nbsp;OUR&nbsp;</span>

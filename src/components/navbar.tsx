@@ -18,15 +18,15 @@ import {
   NavbarMenuItem,
 } from "@nextui-org/navbar";
 import { useNavigate } from "react-router-dom";
-import { useObserver } from 'mobx-react';
-import { store } from '../store/store';
+import { useObserver } from "mobx-react";
+import { store } from "../store/store";
 // import clsx from "clsx";
 // 合并类名参考此写法
 //  className={clsx(
 //   linkStyles({ color: "foreground" }),
 //   "data-[active=true]:text-primary data-[active=true]:font-medium",
 
-import { ChevronDown } from "./Icons";
+import { BookIcon, ChevronDown, PhoneIcon } from "./Icons";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
@@ -37,7 +37,6 @@ export const Navbar = () => {
     chevron: <ChevronDown fill="currentColor" size={16} />,
   };
   let navigate = useNavigate();
-
 
   return useObserver(() => (
     <NextUINavbar maxWidth="xl" position="sticky">
@@ -61,10 +60,11 @@ export const Navbar = () => {
         <NavbarItem className="hidden sm:flex gap-2">
           <Tabs
             aria-label="Options"
-          size="sm"
+            size="sm"
             onSelectionChange={(v) => {
-              store.changeShowState(String(v))
+              store.changeShowState(String(v));
             }}
+            selectedKey={store.showState}
           >
             <Tab key="flat" title="瀑布" />
             <Tab key="book" title="拟书" />
@@ -102,16 +102,25 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <Tabs
-          aria-label="Options"
-          size="sm"
-          onSelectionChange={(v) => {
-            store.changeShowState(String(v))
-          }}
-        >
-          <Tab key="flat" title="瀑布" />
-          <Tab key="book" title="拟书" />
-        </Tabs>
+        {store.showState === "book" ? (
+          <div className="px-px transition-opacity hover:opacity-50 cursor-pointer">
+            <PhoneIcon
+              size={22}
+              onClick={() => {
+                store.changeShowState("flat");
+              }}
+            />
+          </div>
+        ) : (
+          <div className="px-px transition-opacity hover:opacity-50 cursor-pointer">
+            <BookIcon
+              size={22}
+              onClick={() => {
+                store.changeShowState("book");
+              }}
+            />
+          </div>
+        )}
         <ThemeSwitch />
         <NavbarMenuToggle />
       </NavbarContent>
@@ -130,5 +139,5 @@ export const Navbar = () => {
         </div>
       </NavbarMenu>
     </NextUINavbar>
-  ))
+  ));
 };

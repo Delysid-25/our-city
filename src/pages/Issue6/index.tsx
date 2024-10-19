@@ -17,6 +17,7 @@ export default function Issue6() {
     "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/9.JPG",
     "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/10.JPG",
   ];
+
   return useObserver(() => (
     <DefaultLayout>
       {store.showState === "flat" && (
@@ -40,33 +41,35 @@ export default function Issue6() {
           />
         ))}
       </section>
-      <section className="flex justify-center py-8 md:py-10">
-        {/* @ts-ignore */}
-        <HTMLFlipBook
-          width={537}
-          height={877}
-          size="stretch"
-          minWidth={396}
-          maxWidth={1073}
-          // minHeight={877}
-          maxHeight={1754}
-          maxShadowOpacity={0.2}
-          showCover={true}
-          autoSize
-          style={{ display: store.showState === "book" ? "block" : "none" }}
-          mobileScrollSupport={true}
-        >
-          {images.slice(0, -1).map((image, index) => (
-            <img
-              key={index} // 使用key属性，以便React能够追踪每个元素
-              height={"auto"} // 根据需要设置高度
-              src={image}
-              width={"100%"}
-              loading="lazy"
-            />
-          ))}
-        </HTMLFlipBook>
-      </section>
+      {store.showState === "book" && (
+        <section className="flex justify-center py-8 md:py-10">
+          {/* @ts-ignore */}
+          <HTMLFlipBook
+            width={537}
+            height={877}
+            size="stretch"
+            minWidth={396}
+            maxWidth={1073}
+            // minHeight={877}
+            maxHeight={1754}
+            maxShadowOpacity={0.2}
+            showCover={true}
+            autoSize
+            // style={{ display: store.showState === "book" ? "block" : "none" }}
+            mobileScrollSupport={true}
+          >
+            {images.slice(0, -1).map((image, index) => (
+              <img
+                key={index} // 使用key属性，以便React能够追踪每个元素
+                height={"auto"} // 根据需要设置高度
+                src={image}
+                width={"100%"}
+                loading="lazy"
+              />
+            ))}
+          </HTMLFlipBook>
+        </section>
+      )}
     </DefaultLayout>
   ));
 }

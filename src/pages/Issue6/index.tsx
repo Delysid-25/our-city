@@ -7,89 +7,17 @@ import { useObserver } from "mobx-react";
 import { store } from "../../store/store";
 
 export default function Issue6() {
-  // const images = [
-  //   {
-  //     src: "/our-city/issue6/1.JPG",
-  //     alt: "OUR CITY",
-  //   },
-  //   {
-  //     src: "/our-city/issue6/2.JPG",
-  //     alt: "OUR CITY",
-  //   },
-  //   {
-  //     src: "/our-city/issue6/3.JPG",
-  //     alt: "OUR CITY",
-  //   },
-  //   {
-  //     src: "/issue6/4.JPG",
-  //     alt: "OUR CITY",
-  //   },
-  //   {
-  //     src: "/issue6/5.JPG",
-  //     alt: "OUR CITY",
-  //   },
-  //   {
-  //     src: "/issue6/6.JPG",
-  //     alt: "OUR CITY",
-  //   },
-  //   {
-  //     src: "/issue6/7.JPG",
-  //     alt: "OUR CITY",
-  //   },
-  //   {
-  //     src: "/issue6/8.JPG",
-  //     alt: "OUR CITY",
-  //   },
-  //   {
-  //     src: "/issue6/9.JPG",
-  //     alt: "OUR CITY",
-  //   },
-  //   {
-  //     src: "/issue6/10.JPG",
-  //     alt: "OUR CITY",
-  //   },
-  // ];
   const images = [
-    {
-      src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/1.JPG",
-      alt: "OUR CITY",
-    },
-    {
-      src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/2.JPG",
-      alt: "OUR CITY",
-    },
-    {
-      src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/3.JPG",
-      alt: "OUR CITY",
-    },
-    {
-      src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/4.JPG",
-      alt: "OUR CITY",
-    },
-    {
-      src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/5.JPG",
-      alt: "OUR CITY",
-    },
-    {
-      src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/6.JPG",
-      alt: "OUR CITY",
-    },
-    {
-      src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/7.JPG",
-      alt: "OUR CITY",
-    },
-    {
-      src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/8.JPG",
-      alt: "OUR CITY",
-    },
-    {
-      src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/9.JPG",
-      alt: "OUR CITY",
-    },
-    {
-      src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/10.JPG",
-      alt: "OUR CITY",
-    },
+    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/1.JPG",
+    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/2.JPG",
+    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/3.JPG",
+    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/4.JPG",
+    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/5.JPG",
+    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/6.JPG",
+    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/7.JPG",
+    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/8.JPG",
+    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/9.JPG",
+    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/10.JPG",
   ];
   return useObserver(() => (
     <DefaultLayout>
@@ -114,8 +42,9 @@ export default function Issue6() {
               <img
                 key={index} // 使用key属性，以便React能够追踪每个元素
                 height={"auto"} // 根据需要设置高度
-                src={image.src}
+                src={image}
                 width={"100%"}
+                loading="lazy"
               />
             ))}
           </HTMLFlipBook>
@@ -128,21 +57,12 @@ export default function Issue6() {
           <span className={subtitle()}>第六期</span>
           <section className="flex flex-col items-center justify-center py-8 md:py-10">
             {images.map((image, index) => (
-              // <Image
-              //   key={index} // 使用key属性，以便React能够追踪每个元素
-              //   isBlurred
-              //   alt={image.alt}
-              //   height={"auto"} // 根据需要设置高度
-              //   radius="none"
-              //   shadow="lg"
-              //   src={image.src}
-              //   width={"100%"}
-              // />
               <img
                 key={index} // 使用key属性，以便React能够追踪每个元素
                 height={"auto"} // 根据需要设置高度
-                src={image.src}
+                src={image}
                 width={"100%"}
+                loading="lazy"
               />
             ))}
           </section>

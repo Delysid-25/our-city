@@ -7,49 +7,90 @@ import { useObserver } from 'mobx-react';
 import { store } from '../../store/store';
 
 export default function Issue6() {
+  // const images = [
+  //   {
+  //     src: "/issue6/1.JPG",
+  //     alt: "OUR CITY",
+  //   },
+  //   {
+  //     src: "/issue6/2.JPG",
+  //     alt: "OUR CITY",
+  //   },
+  //   {
+  //     src: "/issue6/3.JPG",
+  //     alt: "OUR CITY",
+  //   },
+  //   {
+  //     src: "/issue6/4.JPG",
+  //     alt: "OUR CITY",
+  //   },
+  //   {
+  //     src: "/issue6/5.JPG",
+  //     alt: "OUR CITY",
+  //   },
+  //   {
+  //     src: "/issue6/6.JPG",
+  //     alt: "OUR CITY",
+  //   },
+  //   {
+  //     src: "/issue6/7.JPG",
+  //     alt: "OUR CITY",
+  //   },
+  //   {
+  //     src: "/issue6/8.JPG",
+  //     alt: "OUR CITY",
+  //   },
+  //   {
+  //     src: "/issue6/9.JPG",
+  //     alt: "OUR CITY",
+  //   },
+  //   {
+  //     src: "/issue6/10.JPG",
+  //     alt: "OUR CITY",
+  //   },
+  // ];
   const images = [
     {
-      src: "/issue6/1.JPG",
+      src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/1.JPG",
       alt: "OUR CITY",
     },
     {
-      src: "/issue6/2.JPG",
+      src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/2.JPG",
       alt: "OUR CITY",
     },
     {
-      src: "/issue6/3.JPG",
+      src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/3.JPG",
       alt: "OUR CITY",
     },
     {
-      src: "/issue6/4.JPG",
+      src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/4.JPG",
       alt: "OUR CITY",
     },
     {
-      src: "/issue6/5.JPG",
+      src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/5.JPG",
       alt: "OUR CITY",
     },
     {
-      src: "/issue6/6.JPG",
+      src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/6.JPG",
       alt: "OUR CITY",
     },
     {
-      src: "/issue6/7.JPG",
+      src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/7.JPG",
       alt: "OUR CITY",
     },
     {
-      src: "/issue6/8.JPG",
+      src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/8.JPG",
       alt: "OUR CITY",
     },
     {
-      src: "/issue6/9.JPG",
+      src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/9.JPG",
       alt: "OUR CITY",
     },
     {
-      src: "/issue6/10.JPG",
+      src: "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/10.JPG",
       alt: "OUR CITY",
     },
-  ];
-
+];
   return useObserver(() =>  (
     <DefaultLayout>
       <span className={title()}>在燕郊&nbsp;OUR&nbsp;</span>

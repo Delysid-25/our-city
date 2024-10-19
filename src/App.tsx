@@ -7,8 +7,8 @@ import Issue2 from "./pages/Issue2";
 import Issue1 from "./pages/Issue1";
 
 import Issue6 from "@/pages/Issue6";
-// let base = "/our-city";
-let base = "";
+let base = "/our-city";
+// let base = "";
 function App() {
   return (
     <Routes>

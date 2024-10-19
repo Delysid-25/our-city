@@ -9,6 +9,6 @@ export default defineConfig({
     // outDir: 'dist'
     outDir: 'docs'
   },
-  // base: '/our-city/'
-  base: './'
+  base: '/our-city/'
+  // base: './'
 })

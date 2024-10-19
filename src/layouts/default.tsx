@@ -1,4 +1,4 @@
-import { Link } from "@nextui-org/link";
+// import { Link } from "@nextui-org/link";
 
 import { Navbar } from "@/components/navbar";
 
@@ -13,7 +13,7 @@ export default function DefaultLayout({
       <main className="container mx-auto max-w-7xl px-5 flex-grow">
         {children}
       </main>
-      <footer className="w-full flex items-center justify-center py-3">
+      {/* <footer className="w-full flex items-center justify-center py-3">
         <Link
           isExternal
           className="flex items-center gap-1 text-current"
@@ -23,7 +23,7 @@ export default function DefaultLayout({
           <span className="text-default-600">published by</span>
           <p className="text-primary">OUR CITY</p>
         </Link>
-      </footer>
+      </footer> */}
     </div>
   );
 }

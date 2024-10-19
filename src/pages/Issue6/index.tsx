@@ -5,6 +5,7 @@ import DefaultLayout from "@/layouts/default";
 import HTMLFlipBook from "react-pageflip";
 import { useObserver } from "mobx-react";
 import { store } from "../../store/store";
+import { useEffect } from "react";
 
 export default function Issue6() {
   const images = [
@@ -19,6 +20,30 @@ export default function Issue6() {
     "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/9.JPG",
     "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/10.JPG",
   ];
+  // 定义 IntersectionObserver 实例
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const img = entry.target as HTMLImageElement;
+          img.src = img.dataset.src || ""; // 替换为实际的图片地址
+          observer.unobserve(img); // 停止观察该元素
+        }
+      });
+    },
+    {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1,
+    }
+  );
+  useEffect(() => {
+    return () => {
+      // 清理工作：取消所有观察
+      observer.disconnect();
+    };
+  }, []);
+
   return useObserver(() => (
     <DefaultLayout>
       {store.showState === "book" && (
@@ -59,10 +84,15 @@ export default function Issue6() {
             {images.map((image, index) => (
               <img
                 key={index} // 使用key属性，以便React能够追踪每个元素
-                height={"auto"} // 根据需要设置高度
-                src={image}
-                width={"100%"}
-                loading="lazy"
+                height="auto" // 根据需要设置高度
+                data-src={image} // 使用 data-src 存储实际的图片地址
+                src="/issue6/9.JPG" // 使用一个占位图
+                width="100%"
+                ref={(img) => {
+                  if (img) {
+                    observer.observe(img); // 观察图片元素
+                  }
+                }}
               />
             ))}
           </section>

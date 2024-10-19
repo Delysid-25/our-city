@@ -5,6 +5,8 @@ import {
   DropdownMenu,
   DropdownTrigger,
   Link,
+  Tab,
+  Tabs,
 } from "@nextui-org/react";
 import {
   Navbar as NextUINavbar,
@@ -16,7 +18,8 @@ import {
   NavbarMenuItem,
 } from "@nextui-org/navbar";
 import { useNavigate } from "react-router-dom";
-
+import { useObserver } from 'mobx-react';
+import { store } from '../store/store';
 // import clsx from "clsx";
 // 合并类名参考此写法
 //  className={clsx(
@@ -35,7 +38,8 @@ export const Navbar = () => {
   };
   let navigate = useNavigate();
 
-  return (
+
+  return useObserver(() => (
     <NextUINavbar maxWidth="xl" position="sticky">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand className="gap-3 max-w-fit">
@@ -54,6 +58,18 @@ export const Navbar = () => {
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
       >
+        <NavbarItem className="hidden sm:flex gap-2">
+          <Tabs
+            aria-label="Options"
+            onSelectionChange={(v) => {
+              store.changeShowState(String(v))
+            }}
+          >
+            <Tab key="flat" title="瀑布" />
+            <Tab key="book" title="拟书" />
+          </Tabs>
+        </NavbarItem>
+
         <NavbarItem className="hidden sm:flex gap-2">
           <ThemeSwitch />
         </NavbarItem>
@@ -85,6 +101,15 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
+        <Tabs
+          aria-label="Options"
+          onSelectionChange={(v) => {
+            store.changeShowState(String(v))
+          }}
+        >
+          <Tab key="flat" title="瀑布" />
+          <Tab key="book" title="拟书" />
+        </Tabs>
         <ThemeSwitch />
         <NavbarMenuToggle />
       </NavbarContent>
@@ -103,5 +128,5 @@ export const Navbar = () => {
         </div>
       </NavbarMenu>
     </NextUINavbar>
-  );
+  ))
 };

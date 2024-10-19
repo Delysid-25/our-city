@@ -1,5 +1,6 @@
 export type SiteConfig = typeof siteConfig;
-let base = "/our-city";
+// let base = "/our-city";
+let base = "";
 
 export const siteConfig = {
   name: "Vite + NextUI",

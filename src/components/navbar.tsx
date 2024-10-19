@@ -61,6 +61,7 @@ export const Navbar = () => {
         <NavbarItem className="hidden sm:flex gap-2">
           <Tabs
             aria-label="Options"
+          size="sm"
             onSelectionChange={(v) => {
               store.changeShowState(String(v))
             }}
@@ -103,6 +104,7 @@ export const Navbar = () => {
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
         <Tabs
           aria-label="Options"
+          size="sm"
           onSelectionChange={(v) => {
             store.changeShowState(String(v))
           }}

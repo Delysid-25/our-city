@@ -75,9 +75,9 @@ export default function Issue6() {
             width={537}
             height={877}
             size="stretch"
-            minWidth={537}
+            minWidth={396}
             maxWidth={1073}
-            minHeight={877}
+            // minHeight={877}
             maxHeight={1754}
             maxShadowOpacity={0.2}
             showCover={true}

@@ -106,7 +106,8 @@ export const Navbar = () => {
           <div className="px-px transition-opacity hover:opacity-50 cursor-pointer">
             <PhoneIcon
               size={22}
-              onClick={() => {
+              onClick={(e) => {
+                e.stopPropagation();
                 store.changeShowState("flat");
               }}
             />
@@ -115,7 +116,8 @@ export const Navbar = () => {
           <div className="px-px transition-opacity hover:opacity-50 cursor-pointer">
             <BookIcon
               size={22}
-              onClick={() => {
+              onClick={(e) => {
+                e.stopPropagation();
                 store.changeShowState("book");
               }}
             />

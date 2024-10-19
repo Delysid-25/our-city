@@ -53,7 +53,6 @@ export default function Issue6() {
           maxShadowOpacity={0.2}
           showCover={true}
           autoSize
-          showPageCorners
           style={{ display: store.showState === "book" ? "block" : "none" }}
           mobileScrollSupport={true}
         >

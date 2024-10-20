@@ -50,7 +50,7 @@ export const Navbar = () => {
   const dChangeState = useDebounceFn(changeState, { wait: 200 });
 
   return useObserver(() => (
-    <NextUINavbar maxWidth="xl" position="sticky">
+    <NextUINavbar maxWidth="xl" position={store.showState === "flat" ? "sticky" : "static"}>
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand className="gap-3 max-w-fit">
           <Link

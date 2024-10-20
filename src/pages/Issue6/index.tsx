@@ -42,7 +42,7 @@ export default function Issue6() {
           />
         ))}
       </section>
-      {/* {store.showState === "book" && ( */}
+      {store.showState === "book" && (
         <section className="flex flex-col items-center py-1 md:py-5">
           {/* @ts-ignore */}
           <HTMLFlipBook
@@ -57,7 +57,6 @@ export default function Issue6() {
             showCover
             autoSize
             className={styles.book}
-            style={{display:store.showState === "book" ? 'block' :'none'}}
           >
             {images.slice(0, -1).map((image, index) => (
               <img
@@ -70,7 +69,7 @@ export default function Issue6() {
             ))}
           </HTMLFlipBook>
         </section>
-      {/* )} */}
+      )}
     </DefaultLayout>
   ));
 }

@@ -47,7 +47,7 @@ export const Navbar = () => {
     store.changeShowState(state);
   };
 
-  const dChangeState = useDebounceFn(changeState, { wait: 200 });
+  const dChangeState = useDebounceFn(changeState, { wait: 100 });
 
   return useObserver(() => (
     <NextUINavbar maxWidth="xl" position={store.showState === "flat" ? "sticky" : "static"}>

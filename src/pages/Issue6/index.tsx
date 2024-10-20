@@ -3,7 +3,7 @@ import DefaultLayout from "@/layouts/default";
 import HTMLFlipBook from "react-pageflip";
 import { useObserver } from "mobx-react";
 import { store } from "../../store/store";
-import stylse from "./index.module.css";
+import styles from "./index.module.css";
 
 export default function Issue6() {
   const images = [
@@ -29,7 +29,7 @@ export default function Issue6() {
         </>
       )}
       <section
-        className="flex flex-col items-center justify-center py-8 md:py-10"
+        className="flex flex-col items-center justify-center py-3 md:py-8"
         style={{ display: store.showState === "flat" ? "block" : "none" }}
       >
         {images.map((image, index) => (
@@ -42,7 +42,7 @@ export default function Issue6() {
           />
         ))}
       </section>
-      {store.showState === "book" && (
+      {/* {store.showState === "book" && ( */}
         <section className="flex flex-col items-center py-1 md:py-5">
           {/* @ts-ignore */}
           <HTMLFlipBook
@@ -56,8 +56,8 @@ export default function Issue6() {
             maxShadowOpacity={0.2}
             showCover
             autoSize
-            className={stylse.book}
-            mobileScrollSupport={true}
+            className={styles.book}
+            style={{display:store.showState === "book" ? 'block' :'none'}}
           >
             {images.slice(0, -1).map((image, index) => (
               <img
@@ -70,7 +70,7 @@ export default function Issue6() {
             ))}
           </HTMLFlipBook>
         </section>
-      )}
+      {/* )} */}
     </DefaultLayout>
   ));
 }

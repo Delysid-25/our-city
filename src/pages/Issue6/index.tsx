@@ -3,19 +3,20 @@ import DefaultLayout from "@/layouts/default";
 import HTMLFlipBook from "react-pageflip";
 import { useObserver } from "mobx-react";
 import { store } from "../../store/store";
+import stylse from "./index.module.css";
 
 export default function Issue6() {
   const images = [
-    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/1.JPG",
-    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/2.JPG",
-    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/3.JPG",
-    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/4.JPG",
-    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/5.JPG",
-    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/6.JPG",
-    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/7.JPG",
-    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/8.JPG",
-    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/9.JPG",
-    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/10.JPG",
+    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/issue6/1.webp",
+    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/issue6/10.webp",
+    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/issue6/2.webp",
+    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/issue6/3.webp",
+    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/issue6/4.webp",
+    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/issue6/5.webp",
+    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/issue6/6.webp",
+    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/issue6/7.webp",
+    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/issue6/8.webp",
+    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/issue6/9.webp",
   ];
 
   return useObserver(() => (
@@ -55,7 +56,7 @@ export default function Issue6() {
             maxShadowOpacity={0.2}
             showCover={true}
             autoSize
-            // style={{ display: store.showState === "book" ? "block" : "none" }}
+            className={stylse.book}
             mobileScrollSupport={true}
           >
             {images.slice(0, -1).map((image, index) => (

@@ -57,6 +57,7 @@ export default function Issue6() {
             showCover
             autoSize
             className={styles.book}
+            mobileScrollSupport
           >
             {images.slice(0, -1).map((image, index) => (
               <img

@@ -31,12 +31,23 @@ import { BookIcon, ChevronDown, PhoneIcon } from "./Icons";
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 // import { Logo } from "@/components/icons";
+import { useDebounceFn } from "ahooks";
 
 export const Navbar = () => {
   const icons = {
     chevron: <ChevronDown fill="currentColor" size={16} />,
   };
   let navigate = useNavigate();
+
+  const changeState = (
+    e: React.MouseEvent<SVGSVGElement, MouseEvent>,
+    state: string
+  ) => {
+    e.stopPropagation();
+    store.changeShowState(state);
+  };
+
+  const dChangeState = useDebounceFn(changeState, { wait: 500 });
 
   return useObserver(() => (
     <NextUINavbar maxWidth="xl" position="sticky">
@@ -107,8 +118,7 @@ export const Navbar = () => {
             <PhoneIcon
               size={22}
               onClick={(e) => {
-                e.stopPropagation();
-                store.changeShowState("flat");
+                dChangeState.run(e, "flat");
               }}
             />
           </div>
@@ -117,8 +127,7 @@ export const Navbar = () => {
             <BookIcon
               size={22}
               onClick={(e) => {
-                e.stopPropagation();
-                store.changeShowState("book");
+                dChangeState.run(e, "book");
               }}
             />
           </div>

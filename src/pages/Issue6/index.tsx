@@ -8,7 +8,6 @@ import stylse from "./index.module.css";
 export default function Issue6() {
   const images = [
     "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/issue6/1.webp",
-    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/issue6/10.webp",
     "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/issue6/2.webp",
     "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/issue6/3.webp",
     "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/issue6/4.webp",
@@ -17,6 +16,7 @@ export default function Issue6() {
     "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/issue6/7.webp",
     "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/issue6/8.webp",
     "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/issue6/9.webp",
+    "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/issue6/10.webp",
   ];
 
   return useObserver(() => (
@@ -43,7 +43,7 @@ export default function Issue6() {
         ))}
       </section>
       {store.showState === "book" && (
-        <section className="flex justify-center py-8 md:py-10">
+        <section className="flex flex-col items-center py-1 md:py-5">
           {/* @ts-ignore */}
           <HTMLFlipBook
             width={537}
@@ -54,7 +54,7 @@ export default function Issue6() {
             // minHeight={877}
             maxHeight={1754}
             maxShadowOpacity={0.2}
-            showCover={true}
+            showCover
             autoSize
             className={stylse.book}
             mobileScrollSupport={true}

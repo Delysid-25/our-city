@@ -26,7 +26,7 @@ import { store } from "../store/store";
 //   linkStyles({ color: "foreground" }),
 //   "data-[active=true]:text-primary data-[active=true]:font-medium",
 
-import { BookIcon, ChevronDown, PhoneIcon, RewardIcon } from "./Icons";
+import { BookIcon, ChevronDown, PhoneIcon } from "./Icons";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";

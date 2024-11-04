@@ -26,12 +26,12 @@ import { store } from "../store/store";
 //   linkStyles({ color: "foreground" }),
 //   "data-[active=true]:text-primary data-[active=true]:font-medium",
 
-import { BookIcon, ChevronDown, PhoneIcon } from "./Icons";
+import { BookIcon, ChevronDown, PhoneIcon, RewardIcon } from "./Icons";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 // import { Logo } from "@/components/icons";
-import { useDebounceFn } from "ahooks";
+// import { useDebounceFn } from "ahooks";
 
 export const Navbar = () => {
   const icons = {
@@ -47,10 +47,13 @@ export const Navbar = () => {
     store.changeShowState(state);
   };
 
-  const dChangeState = useDebounceFn(changeState, { wait: 100 });
+  // const dChangeState = useDebounceFn(changeState, { wait: 100 });
 
   return useObserver(() => (
-    <NextUINavbar maxWidth="xl" position={store.showState === "flat" ? "sticky" : "static"}>
+    <NextUINavbar
+      maxWidth="xl"
+      position={store.showState === "flat" ? "sticky" : "static"}
+    >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand className="gap-3 max-w-fit">
           <Link
@@ -113,12 +116,21 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
+        {/* <div className="px-px transition-opacity hover:opacity-50 cursor-pointer">
+          <RewardIcon
+            size={22}
+            onClick={(e) => {
+              navigate('reward');
+            }}
+          />
+        </div> */}
         {store.showState === "book" ? (
           <div className="px-px transition-opacity hover:opacity-50 cursor-pointer">
             <PhoneIcon
               size={22}
               onClick={(e) => {
-                dChangeState.run(e, "flat");
+                // dChangeState.run(e, "flat");
+                changeState(e, "flat");
               }}
             />
           </div>
@@ -127,7 +139,8 @@ export const Navbar = () => {
             <BookIcon
               size={22}
               onClick={(e) => {
-                dChangeState.run(e, "book");
+                // dChangeState.run(e, "book");
+                changeState(e, "book");
               }}
             />
           </div>
@@ -139,12 +152,15 @@ export const Navbar = () => {
       <NavbarMenu>
         <div className="mx-4 mt-2 flex flex-col gap-2">
           {siteConfig.navMenuItems.map((item, index) => (
-            <NavbarMenuItem
-              key={`${item}-${index}`}
-              className="text-right"
-              onClick={() => navigate(item.href)}
-            >
-              {item.label}
+            <NavbarMenuItem key={`${item}-${index}`} className="text-right">
+              <Link
+                // className="flex justify-start items-center gap-1"
+                color={index === 0 ? "primary" : "foreground"}
+                href={item.href}
+                onClick={() => navigate(item.href)}
+              >
+                {item.label}
+              </Link>
             </NavbarMenuItem>
           ))}
         </div>

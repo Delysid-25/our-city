@@ -1,18 +1,13 @@
 export type SiteConfig = typeof siteConfig;
-let base = "/our-city";
-// let base = "";
+// let base = "/our-city";
+let base = "";
 
 export const siteConfig = {
-  name: "Vite + NextUI",
-  description: "Make beautiful websites regardless of your design experience.",
-  navItems: [
-    {
-      label: "Home",
-      href: "/",
-    },
-  ],
-
   navMenuItems: [
+    {
+      label: "关于我们",
+      href: "/about",
+    },
     {
       label: "第一期",
       href: `${base}/issue1`,

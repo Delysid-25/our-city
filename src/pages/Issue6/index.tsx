@@ -1,4 +1,4 @@
-import { title, subtitle } from "@/components/primitives";
+// import { title, subtitle } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
 import HTMLFlipBook from "react-pageflip";
 import { useObserver } from "mobx-react";
@@ -19,6 +19,7 @@ export default function Issue6() {
   //   "https://ourcity-issue6.oss-cn-beijing.aliyuncs.com/issue6/issue6/10.webp",
   // ];
   const images = [
+    "/issue6/0.webp",
     "/issue6/1.webp",
     "/issue6/2.webp",
     "/issue6/3.webp",
@@ -28,17 +29,16 @@ export default function Issue6() {
     "/issue6/7.webp",
     "/issue6/8.webp",
     "/issue6/9.webp",
-    "/issue6/10.webp",
+    // "/issue6/10.webp",
   ];
 
   return useObserver(() => (
     <DefaultLayout>
       {store.showState === "flat" && (
         <>
-          <span className={title()}>在燕郊&nbsp;OUR&nbsp;</span>
+          {/* <span className={title()}>在燕郊&nbsp;OUR&nbsp;</span>
           <span className={title({ color: "blue" })}>CITY&nbsp;</span>
-          <span className={subtitle()}>第六期</span>
-
+          <span className={subtitle()}>第六期</span> */}
           <section
             className="flex flex-col items-center justify-center py-3 md:py-8"
           // style={{ display: store.showState === "flat" ? "block" : "none" }}
@@ -64,15 +64,13 @@ export default function Issue6() {
             size="stretch"
             minWidth={396}
             maxWidth={1073}
-            // minHeight={877}
-            // maxHeight={1754}
             maxShadowOpacity={0.2}
             showCover
             autoSize
             className={styles.book}
             mobileScrollSupport
           >
-            {images.slice(0, -1).map((image, index) => (
+            {images.slice(1, images.length).map((image, index) => (
               <img
                 key={index} // 使用key属性，以便React能够追踪每个元素
                 height={"auto"} // 根据需要设置高度

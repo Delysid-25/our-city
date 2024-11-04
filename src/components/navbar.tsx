@@ -26,7 +26,7 @@ import { store } from "../store/store";
 //   linkStyles({ color: "foreground" }),
 //   "data-[active=true]:text-primary data-[active=true]:font-medium",
 
-import { BookIcon, ChevronDown, PhoneIcon } from "./Icons";
+import { ChevronDown } from "./Icons";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
@@ -39,13 +39,13 @@ export const Navbar = () => {
   };
   let navigate = useNavigate();
 
-  const changeState = (
-    e: React.MouseEvent<SVGSVGElement, MouseEvent>,
-    state: string
-  ) => {
-    e.stopPropagation();
-    store.changeShowState(state);
-  };
+  // const changeState = (
+  //   e: React.MouseEvent<SVGSVGElement, MouseEvent>,
+  //   state: string
+  // ) => {
+  //   e.stopPropagation();
+  //   store.changeShowState(state);
+  // };
 
   // const dChangeState = useDebounceFn(changeState, { wait: 100 });
 
@@ -124,7 +124,7 @@ export const Navbar = () => {
             }}
           />
         </div> */}
-        {store.showState === "book" ? (
+        {/* {store.showState === "book" ? (
           <div className="px-px transition-opacity hover:opacity-50 cursor-pointer">
             <PhoneIcon
               size={22}
@@ -144,7 +144,7 @@ export const Navbar = () => {
               }}
             />
           </div>
-        )}
+        )} */}
         <ThemeSwitch />
         <NavbarMenuToggle />
       </NavbarContent>

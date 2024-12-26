@@ -14,7 +14,8 @@ let base = "";
 function App() {
   return (
     <Routes>
-      <Route element={<Issue6 />} path={base} />
+      <Route element={<Issue7 />} path={base} />
+      <Route element={<Issue7 />} path={`${base}/issue7`} />
       <Route element={<Issue7 />} path={`${base}/issue7`} />
       <Route element={<Issue6 />} path={`${base}/issue6`} />
       <Route element={<Issue5 />} path={`${base}/issue5`} />
@@ -23,7 +24,7 @@ function App() {
       <Route element={<Issue2 />} path={`${base}/issue2`} />
       <Route element={<Issue1 />} path={`${base}/issue1`} />
       <Route element={<About />} path={`${base}/about`} />
-      <Route element={<Navigate replace to={`${base}/issue6`} />} path="/" />
+      <Route element={<Navigate replace to={`${base}/issue7`} />} path="/" />
     </Routes>
   );
 }

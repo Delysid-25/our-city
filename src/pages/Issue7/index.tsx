@@ -4,7 +4,6 @@ import { Navbar } from "@/components/navbar";
 import { Chip, Image } from "@nextui-org/react";
 import { Typography, ConfigProvider, Divider, Space } from "antd";
 import { store } from "../../store/store";
-import { useTheme } from "@nextui-org/use-theme";
 
 
 export default function Issue7() {
@@ -30,7 +29,6 @@ export default function Issue7() {
   ];
 
   const { Title, Paragraph, Link, Text } = Typography;
-console.log(store?.nextUiTheme,'111');
 
   return useObserver(() => (
     <>

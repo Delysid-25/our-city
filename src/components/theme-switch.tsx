@@ -6,7 +6,7 @@ import { store } from "../store/store";
 
 // import { useTheme } from "@/hooks/use-theme";
 import { SunFilledIcon, MoonFilledIcon } from "@/components/Icons";
-import {useTheme} from "@nextui-org/use-theme";
+import { useTheme } from "@nextui-org/use-theme";
 
 export interface ThemeSwitchProps {
   className?: string;
@@ -21,15 +21,17 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
 
   const { theme, setTheme } = useTheme();
   const setLightTheme = () => {
-    store.changeThemeState('light');
-    setTheme('light');}
+    store.changeThemeState("light");
+    setTheme("light");
+  };
 
   const setDarkTheme = () => {
-    store.changeThemeState('dark');
-    setTheme('dark');}
+    store.changeThemeState("dark");
+    setTheme("dark");
+  };
 
   const toggleTheme = () =>
-    theme === 'dark' ? setLightTheme() : setDarkTheme();
+    theme === "dark" ? setLightTheme() : setDarkTheme();
 
   const onChange = toggleTheme;
 
@@ -38,7 +40,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
     slots,
     isSelected,
     getBaseProps,
-    getInputProps,
+    // getInputProps,
     getWrapperProps,
   } = useSwitch({
     isSelected: theme === "light",
@@ -59,16 +61,16 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
         className: clsx(
           "px-px transition-opacity hover:opacity-80 cursor-pointer",
           className,
-          classNames?.base,
+          classNames?.base
         ),
       })}
     >
       <VisuallyHidden>
-        <input {...getInputProps()} />
+        {/* <input {...getInputProps()} /> */}
       </VisuallyHidden>
       <div
         {...getWrapperProps()}
-        className={slots.wrapper({
+        className={slots?.wrapper({
           class: clsx(
             [
               "w-auto h-auto",
@@ -81,14 +83,14 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
               "px-0",
               "mx-0",
             ],
-            classNames?.wrapper,
+            classNames?.wrapper
           ),
         })}
       >
         {isSelected ? (
-          <MoonFilledIcon size={22} />
+          <MoonFilledIcon size={22} onClick={toggleTheme} />
         ) : (
-          <SunFilledIcon size={22} />
+          <SunFilledIcon size={22}  onClick={toggleTheme} />
         )}
       </div>
     </Component>

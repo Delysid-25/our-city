@@ -1,7 +1,7 @@
 import { useObserver } from "mobx-react";
 import TitleCard from "@/components/TitleCard";
 import { Navbar } from "@/components/navbar";
-import {  Chip, Image } from "@nextui-org/react";
+import { Chip, Image } from "@nextui-org/react";
 import { Typography, ConfigProvider, Divider, Space } from "antd";
 import { store } from "../../store/store";
 
@@ -30,7 +30,7 @@ export default function Issue7() {
 
   const typographyTheme = {
     colorText: theme === "light" ? "#333" : "#fff", // 正文文本颜色
-    colorTextSecondary: theme === "light" ? "#666" : "#aaa", // 次要文本颜色
+    colorTextSecondary: theme === "light" ? "#666" : "#E0E0E0", // 次要文本颜色
     colorLink: theme === "light" ? "#6baeff" : "#6baeff", // 链接颜色
     colorLinkHover: theme === "light" ? "#40a9ff" : "#91d5ff", // 链接悬停颜色
   };
@@ -477,10 +477,9 @@ export default function Issue7() {
             </>
           </ConfigProvider>
         </main>
-        <Divider />
-        <Text>附：纸质版原版</Text>
+        <Divider>纸质原版</Divider>
         <img
-          height={"auto"} // 根据需要设置高度
+          height={"100%"} // 根据需要设置高度
           src={images[14]}
           width={"100%"}
           loading="lazy"

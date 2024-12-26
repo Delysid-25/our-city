@@ -12,6 +12,7 @@ export default function Issue6() {
     "/issue3/03.webp",
     "/issue3/04.webp",
   ];
+console.log(store.nextUiTheme,store.showState );
 
   return useObserver(() => (
     <DefaultLayout>

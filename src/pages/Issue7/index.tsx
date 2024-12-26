@@ -4,6 +4,8 @@ import { Navbar } from "@/components/navbar";
 import { Chip, Image } from "@nextui-org/react";
 import { Typography, ConfigProvider, Divider, Space } from "antd";
 import { store } from "../../store/store";
+import { useTheme } from "@nextui-org/use-theme";
+
 
 export default function Issue7() {
   const images = [
@@ -26,16 +28,9 @@ export default function Issue7() {
     "/issue7/003.webp",
     "/issue7/004.webp",
   ];
-  const { theme } = store;
-
-  const typographyTheme = {
-    colorText: theme === "light" ? "#333" : "#fff", // 正文文本颜色
-    colorTextSecondary: theme === "light" ? "#666" : "#E0E0E0", // 次要文本颜色
-    colorLink: theme === "light" ? "#6baeff" : "#6baeff", // 链接颜色
-    colorLinkHover: theme === "light" ? "#40a9ff" : "#91d5ff", // 链接悬停颜色
-  };
 
   const { Title, Paragraph, Link, Text } = Typography;
+console.log(store?.nextUiTheme,'111');
 
   return useObserver(() => (
     <>
@@ -54,7 +49,16 @@ export default function Issue7() {
           loading="lazy"
         />
         <main className="container mx-auto max-w-7xl px-3 flex-grow">
-          <ConfigProvider theme={{ token: typographyTheme }}>
+          <ConfigProvider theme={{ token: {
+    // components: {
+    //   Typography: {
+        colorText: store?.nextUiTheme === "light" ? "rgb(0, 0, 0, 0.88)" : "#fff", // 正文文本颜色
+        colorTextSecondary: store?.nextUiTheme === "light" ? "#666" : "#E0E0E0", // 次要文本颜色
+        colorLink: store?.nextUiTheme === "light" ? "#6baeff" : "#6baeff", // 链接颜色
+        colorLinkHover: store?.nextUiTheme === "light" ? "#40a9ff" : "#91d5ff", // 链接悬停颜色z
+      // },
+    // },
+  } }}>
             <br />
             <Divider />
             <TitleCard>消息发布</TitleCard>

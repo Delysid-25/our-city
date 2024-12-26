@@ -2,16 +2,16 @@ import { makeAutoObservable } from "mobx";
 
 class Store {
   showState = "flat";
-  theme = "light";
+  nextUiTheme = "light";
   constructor() {
     makeAutoObservable(this);
   }
 
-  changeShowState = (v:string) => {
-    this.showState = v;
+  changeThemeState = (v: string) => {
+    this.nextUiTheme = v;
   };
-  changeThemeState = (v:string) => {
-    this.theme = v;
+  changeShowState = (v: string) => {
+    this.showState = v;
   };
 }
 

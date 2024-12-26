@@ -35,6 +35,11 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
 
   const onChange = toggleTheme;
 
+  useEffect(() => {
+    const nextUiTheme = localStorage.getItem("nextui-theme") ?? 'dark';
+    store.changeThemeState(nextUiTheme);
+  }, []);
+
   const {
     Component,
     slots,

@@ -76,6 +76,7 @@ export const Navbar = () => {
             aria-label="Options"
             size="sm"
             onSelectionChange={(v) => {
+             
               store.changeShowState(String(v));
             }}
             selectedKey={store.showState}
@@ -85,7 +86,16 @@ export const Navbar = () => {
           </Tabs>
         </NavbarItem>
 
-        <NavbarItem className="hidden sm:flex gap-2">
+        <NavbarItem
+          className="hidden sm:flex gap-2"
+          // onClick={() => {
+          //   if (store.nextUiTheme === "dark") {
+          //     store.changeThemeState("light");
+          //   } else {
+          //     store.changeThemeState("dark");
+          //   }
+          // }}
+        >
           <ThemeSwitch />
         </NavbarItem>
         <NavbarItem className="hidden sm:flex gap-2">
@@ -105,7 +115,7 @@ export const Navbar = () => {
               {siteConfig.navMenuItems.map((item, index) => (
                 <DropdownItem
                   key={`${item}-${index}`}
-                  onClick={() => navigate(item.href)}
+                  onPress={() => navigate(item.href)}
                 >
                   {item.label}
                 </DropdownItem>
@@ -145,7 +155,10 @@ export const Navbar = () => {
             />
           </div>
         )} */}
-        <ThemeSwitch />
+        <NavbarItem
+        >
+          <ThemeSwitch />
+        </NavbarItem>
         <NavbarMenuToggle />
       </NavbarContent>
 

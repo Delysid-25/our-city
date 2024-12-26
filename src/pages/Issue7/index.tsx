@@ -5,7 +5,6 @@ import { Chip, Image } from "@nextui-org/react";
 import { Typography, ConfigProvider, Divider, Space } from "antd";
 import { store } from "../../store/store";
 
-
 export default function Issue7() {
   const images = [
     "/issue7/00.webp",
@@ -47,16 +46,24 @@ export default function Issue7() {
           loading="lazy"
         />
         <main className="container mx-auto max-w-7xl px-3 flex-grow">
-          <ConfigProvider theme={{ token: {
-    // components: {
-    //   Typography: {
-        colorText: store?.nextUiTheme === "light" ? "rgb(0, 0, 0, 0.88)" : "#fff", // 正文文本颜色
-        colorTextSecondary: store?.nextUiTheme === "light" ? "#666" : "#E0E0E0", // 次要文本颜色
-        colorLink: store?.nextUiTheme === "light" ? "#6baeff" : "#6baeff", // 链接颜色
-        colorLinkHover: store?.nextUiTheme === "light" ? "#40a9ff" : "#91d5ff", // 链接悬停颜色z
-      // },
-    // },
-  } }}>
+          <ConfigProvider
+            theme={{
+              token: {
+                colorText:
+                  store?.nextUiTheme === "light"
+                    ? "rgb(0, 0, 0, 0.88)"
+                    : "#fff", // 正文文本颜色
+                colorTextDescription:
+                  store?.nextUiTheme === "light"
+                    ? "rgb(0, 0, 0, 0.45)"
+                    : "#E0E0E0", // 次要文本颜色
+                colorLink:
+                  store?.nextUiTheme === "light" ? "#6baeff" : "#6baeff", // 链接颜色
+                colorLinkHover:
+                  store?.nextUiTheme === "light" ? "#40a9ff" : "#91d5ff", // 链接悬停颜色z
+              },
+            }}
+          >
             <br />
             <Divider />
             <TitleCard>消息发布</TitleCard>

@@ -36,8 +36,9 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
   const onChange = toggleTheme;
 
   useEffect(() => {
-    const nextUiTheme = localStorage.getItem("nextui-theme") ?? 'dark';
-    store.changeThemeState(nextUiTheme);
+    localStorage.setItem("nextui-theme", "light");
+    localStorage.setItem("nextui-theme", "light");
+    store.changeThemeState("light");
   }, []);
 
   const {
@@ -70,9 +71,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
         ),
       })}
     >
-      <VisuallyHidden>
-        {/* <input {...getInputProps()} /> */}
-      </VisuallyHidden>
+      <VisuallyHidden>{/* <input {...getInputProps()} /> */}</VisuallyHidden>
       <div
         {...getWrapperProps()}
         className={slots?.wrapper({
@@ -95,7 +94,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
         {isSelected ? (
           <MoonFilledIcon size={22} onClick={toggleTheme} />
         ) : (
-          <SunFilledIcon size={22}  onClick={toggleTheme} />
+          <SunFilledIcon size={22} onClick={toggleTheme} />
         )}
       </div>
     </Component>

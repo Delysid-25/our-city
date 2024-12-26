@@ -32,5 +32,9 @@ export const siteConfig = {
       label: "第六期",
       href: `${base}/issue6`,
     },
+    {
+      label: "第七期",
+      href: `${base}/issue7`,
+    },
   ],
 };

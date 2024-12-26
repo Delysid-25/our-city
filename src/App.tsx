@@ -1,5 +1,6 @@
 import { Route, Routes, Navigate } from "react-router-dom";
 
+import Issue7 from "@/pages/Issue7";
 import Issue6 from "@/pages/Issue6";
 import Issue5 from "@/pages/Issue5";
 import Issue4 from "@/pages/Issue4";
@@ -14,6 +15,7 @@ function App() {
   return (
     <Routes>
       <Route element={<Issue6 />} path={base} />
+      <Route element={<Issue7 />} path={`${base}/issue7`} />
       <Route element={<Issue6 />} path={`${base}/issue6`} />
       <Route element={<Issue5 />} path={`${base}/issue5`} />
       <Route element={<Issue4 />} path={`${base}/issue4`} />

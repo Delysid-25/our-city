@@ -1,0 +1,25 @@
+.ongoing-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border: 2px solid #4CAF50; /* 边框颜色 */
+  border-radius: 12px; /* 圆角边框 */
+  font-weight: bold;
+  color: #4CAF50; /* 字体颜色 */
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: #4CAF50; /* 绿点初始颜色 */
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.icon:hover {
+  background: radial-gradient(circle, rgba(76,175,80,1) 0%, rgba(76,175,80,0) 70%); /* 从内向外的渐变 */
+}

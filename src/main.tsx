@@ -10,12 +10,12 @@ import "@/styles/globals.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Provider>
-        <MobxProvider {...store}>
-          <App />
-        </MobxProvider>
-      </Provider>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Provider>
+          <MobxProvider {...store}>
+            <App />
+          </MobxProvider>
+        </Provider>
+      </BrowserRouter>
   </React.StrictMode>
 );

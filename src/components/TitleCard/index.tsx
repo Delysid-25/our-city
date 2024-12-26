@@ -1,6 +1,5 @@
 import React from "react";
-import { Card, CardBody, Chip } from "@nextui-org/react";
-import styles from "./index.module.css";
+import { Chip } from "@nextui-org/react";
 const TitleCard: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   return (
     <Chip

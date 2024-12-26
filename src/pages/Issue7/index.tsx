@@ -1,11 +1,7 @@
-import { title, subtitle } from "@/components/primitives";
-import DefaultLayout from "@/layouts/default";
 import { useObserver } from "mobx-react";
-import styles from "./index.module.css";
 import TitleCard from "@/components/TitleCard";
 import { Navbar } from "@/components/navbar";
-import { Link } from "@nextui-org/link";
-import { Card, Chip, Image } from "@nextui-org/react";
+import {  Chip, Image } from "@nextui-org/react";
 import { Typography, ConfigProvider, Divider, Space } from "antd";
 import { store } from "../../store/store";
 
